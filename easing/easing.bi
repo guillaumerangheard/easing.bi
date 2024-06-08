@@ -1,0 +1,10 @@
+#ifndef _EASING_BI_
+	#define _EASING_BI_
+	namespace easing
+		const as integer versionMajor  => 0%, 
+						 versionMinor  => 4%
+		const as string  versionString => "easing v" & versionMajor & "." & versionMinor
+	end namespace
+	#include "equation/equation.bi"
+	#include "curve/curve.bi"
+#endif
