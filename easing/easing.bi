@@ -1,7 +1,7 @@
 #ifndef _EASING_BI_
 	#define _EASING_BI_
 	namespace easing
-		const as integer versionMajor  => 0%, 
+		const as integer versionMajor  => 0%, _
 						 versionMinor  => 4%
 		const as string  versionString => "easing v" & versionMajor & "." & versionMinor
 	end namespace
