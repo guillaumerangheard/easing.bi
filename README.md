@@ -1,4 +1,4 @@
-# easing.bi
+# easing.bi [v0.4]
 An easing library for FreeBASIC I wrote while working on my generative art toolkit.
 
 Just include `#include "easing/easing.bi"`, and _voilà_
