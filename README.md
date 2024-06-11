@@ -5,7 +5,7 @@ _easing.bi_ is an easing library for FreeBASIC I wrote while working on my gener
 ## easing.equation
 
 All `easing.equation`'s are basically shared functions, whose prototype is `function (byref t as const double) as double`, where `t` is a number between 0 and 1 (representing the amount of transformation between whatever you want to interpolate). One way to use it (should you for example use some awesome [math library](https://github.com/guillaumerangheard/math.bi)) is:
-```
+```freebasic
 #include "easing/easing.bi"
 #include "math/math.bi"
 
@@ -19,7 +19,7 @@ for i as real => 0d to 10d
 next i
 ```
 Extending the library is really easy:
-```
+```freebasic
 namespace easing
     
     function yourAwesomeFunction_f (byref t as const double) as double
