@@ -25,7 +25,7 @@ namespace easing
         ' Your awesome code goes here.
     end function
 
-    dim shared as easing.equation yourAwesomeFunction => @yourAwesomeFunction
+    dim shared as easing.equation yourAwesomeFunction => @yourAwesomeFunction_f
     
 end namespace
 ```
