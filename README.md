@@ -1,21 +1,20 @@
 # easing.bi v0.4
 
-_easing.bi_ is an easing library for FreeBASIC I wrote while working on my generative art toolkit. To use it, just download and copy the _easing_ folder into your project, #include `"easing/easing.bi"`, and _voilà_. It contains (almost) all of [Penner's equations](http://robertpenner.com/easing/), as well as [smooth(er)step](https://en.wikipedia.org/wiki/Smoothstep), and a port of greweb's [Bézier easing](https://github.com/gre/bezier-easing). It implements two objects : **easing.equation** and **easing.curve**.
+_easing.bi_ is an easing library for FreeBASIC I wrote while working on my generative art toolkit. To use it, just download and copy the _easing_ folder into your project, #include `"easing/easing.bi"`, and _voilà_. It contains (almost) all of [Penner's equations](http://robertpenner.com/easing/), as well as [smooth(er)step](https://en.wikipedia.org/wiki/Smoothstep), and a port of greweb's [Bezier easing](https://github.com/gre/bezier-easing). It implements two objects : **easing.equation** and **easing.curve**.
 
 ## easing.equation
 
-All `easing.equation`'s are basically shared functions, whose prototype is `function (byref t as const double) as double`, where `t` is a number between 0 and 1 (representing the amount of transformation between whatever you want to interpolate). One way to use it (should you for example use some awesome [math library](https://github.com/guillaumerangheard/math.bi)) is:
+All `easing.equation`'s are basically shared functions, whose prototype is `function (byref t as const double) as double`, where `t` is a number between 0 and 1 (representing the amount of transformation between whatever you want to interpolate). One way to use it is:
 ```freebasic
 #include "easing/easing.bi"
-#include "math/math.bi"
 
-using math
-
-dim as vec2 v1 => vec2(1d, 2d), _
-            v2 => vec2(3d, 4d)
+dim as vec2 n1 => 10d, _
+            n2 => 20d, _
+            t
 
 for i as real => 0d to 10d
-    print lerp(v1, v2, i / 10d, easing.smoothStep)
+    t => easing.smoothStep(i / 10d)
+    print n1 * (1d - t) + n2 * t
 next i
 ```
 Extending the library is really easy:
@@ -34,8 +33,21 @@ end namespace
 
 ## easing.curve
 
+`easing.curve`'s are cubic Bezier curves, whose constructor takes four numbers: x1, y1, x2, y2, corresponding to their second and third keypoints (as the first and fourth one are implicit). To create and use an `easing.curve`, just type something along the lines of:
+```freebasic
+#include "easing/easing.bi"
 
+dim as easing.curve c => easing.curve(0.42d, 0d, 0.58d, 1d)
+dim as double n1 => 10d, _
+              n2 => 20d, _
+              t
 
-## Roadmap
+for i as double => 0d to 10d
+    t => c.compute(i / 10d)
+    print n1 * (1d - t) + n2 * t
+next i
+```
+
+## What's next?
 
 In the next version (0.5), I'll implement the option to switch to single precision.
