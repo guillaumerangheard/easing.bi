@@ -52,7 +52,7 @@ next i
 
 #### easing.curve.compute (byref t as const double) as double [0.1+]
 
-Takes a number between 0 and 1, which represents time and is technically an x coordinate, and returns the corresponding y coordinate on the curve. (For the underlying math, see greweb's [original post](' Cf. https://greweb.me/2012/02/bezier-curve-based-easing-functions-from-concept-to-implementation).)
+Takes a number between 0 and 1, which represents time and is technically an x coordinate, and returns the corresponding y coordinate on the curve. (For the underlying math, see greweb's [original post](https://greweb.me/2012/02/bezier-curve-based-easing-functions-from-concept-to-implementation).)
 
 #### easing.curve.toCSS () as string [0.5+]
 
