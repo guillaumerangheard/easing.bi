@@ -72,7 +72,7 @@ print c.toCSS()
 
 #### easing.curve.toJSON (byref asArray as boolean => false) [0.5+]
 
-Returns the curve's keypoints either as a JSON object or a JSON array (if `asBoolean` is set to `true`).
+Returns the curve's keypoints either as a JSON object or a JSON array (if `asArray` is set to `true`).
 
 ```freebasic
 #include "easing/easing.bi"
@@ -84,6 +84,7 @@ dim as easing.curve c => easing.curve(0.7796228188090026, _
 
 print c.toJSON()
 ' -> "{"xy":0.7796228188090026,"y1":0.7796228188090026,"x2":0.5971406325697899,"y2":0.9559938737656921}
+
 print c.toJSON(true)
 ' -> "[0.7796228188090026,0.7796228188090026,0.5971406325697899,0.9559938737656921]
 ```
