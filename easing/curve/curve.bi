@@ -21,13 +21,16 @@
                     declare       property y2 (byref as const double)
                     
                     declare const function compute (byref as const double) as double
+                    declare const function toCSS   () as string
+                    declare const function toJSON  (byref as const boolean => false) as string
                 private:
                     as double _x1, _y1, _ ' Control point 1.
                               _x2, _y2    ' Control point 2.
                     
-                    declare const function _calcBezier (byref as const double, byref as const double, byref as const double) as double
-                    declare const function _getSlope   (byref as const double, byref as const double, byref as const double) as double
-                    declare const function _getTForX   (byref as const double) as double
+                    declare const  function _calcBezier (byref as const double, byref as const double, byref as const double) as double
+                    declare const  function _getSlope   (byref as const double, byref as const double, byref as const double) as double
+                    declare const  function _getTForX   (byref as const double) as double
+                    declare static function _toCSSFloat (byref as const double) as string
             end type
         end namespace
         #include "curve_constructors.bas"

@@ -10,6 +10,20 @@ namespace easing
         return this._calcBezier(this._getTForX(x), this._y1, this._y2)
     end function
     
+' easing.curve.toCSS -----------------------------------------------------------
+    
+    function curve.toCSS () as string
+        return "cubic-bezier(" & curve._toCSSFloat(this._x1) & "," & curve._toCSSFloat(this._y1) & _
+                           "," & curve._toCSSFloat(this._x2) & "," & curve._toCSSFloat(this._y2) & ")"
+    end function
+    
+' easing.curve.toJSON ----------------------------------------------------------
+    
+    function curve.toJSON (byref a as const boolean) as string
+        return iif(a, "["        & this._x1 &  ","        & this._y1 &  ","        & this._x2 &  ","        & this._y2 & "]", _
+                     !"{\"x1\":" & this._x1 & !",\"y1\":" & this._y1 & !",\"x2\":" & this._x2 & !",\"y2\":" & this._y2 & "}")
+    end function
+    
 ' easing.curve._calcBezier -----------------------------------------------------
     
     #define _a(aA1,aA2) (1d - 3d * aA2 + 3d * aA1)
@@ -39,6 +53,14 @@ namespace easing
             aGuessT -= currentX / currentSlope
         next i
         return aGuessT
+    end function
+    
+' easing.curve._toCSSFloat -----------------------------------------------------
+    
+    function curve._toCSSFloat (byref n as const double) as string
+        dim as integer i => cint(fix(n)), _
+                       f => cint(fix(frac(n) * 1000d))
+        return iif(f, i & "." & abs(f), str(i))
     end function
     
     #undef _a

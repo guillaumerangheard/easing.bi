@@ -2,7 +2,7 @@
     #define _EASING_BI_
     namespace easing
         const as integer versionMajor  => 0%, _
-                         versionMinor  => 4%
+                         versionMinor  => 5%
         const as string  versionString => "easing v" & versionMajor & "." & versionMinor
     end namespace
     #include "equation/equation.bi"
