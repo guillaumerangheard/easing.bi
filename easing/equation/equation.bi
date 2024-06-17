@@ -4,12 +4,21 @@
         namespace easing
             type equation as function (byref as const double) as double
             
+            declare function backIn_f           (byref as const double) as double
+            declare function backInOut_f        (byref as const double) as double
+            declare function backOut_f          (byref as const double) as double
+            declare function bounceIn_f         (byref as const double) as double
+            declare function bounceInOut_f      (byref as const double) as double
+            declare function bounceOut_f        (byref as const double) as double
             declare function circularIn_f       (byref as const double) as double
             declare function circularInOut_f    (byref as const double) as double
             declare function circularOut_f      (byref as const double) as double
             declare function cubicIn_f          (byref as const double) as double
             declare function cubicInOut_f       (byref as const double) as double
             declare function cubicOut_f         (byref as const double) as double
+            declare function elasticIn_f        (byref as const double) as double
+            declare function elasticInOut_f     (byref as const double) as double
+            declare function elasticOut_f       (byref as const double) as double
             declare function exponentialIn_f    (byref as const double) as double
             declare function exponentialInOut_f (byref as const double) as double
             declare function exponentialOut_f   (byref as const double) as double
