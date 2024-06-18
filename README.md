@@ -33,7 +33,7 @@ end namespace
 
 ## easing.curve
 
-`easing.curve`'s are cubic Bezier curves, whose constructor takes four numbers: x1, y1, x2, y2, corresponding to their second and third keypoints (as the first and fourth one are implicit). Note that x1 and x2 are clamped between 0 and 1, as one cannot go back in time.) To create and use an `easing.curve`, just type something along the lines of:
+`easing.curve`'s are cubic Bezier curves, whose constructor takes four numbers: x1, y1, x2, and y2, corresponding to their second and third keypoints (as the first and fourth one are implicit). Note that x1 and x2 are clamped between 0 and 1, as one cannot go back in time.) To create and use an `easing.curve`, just type something along the lines of:
 ```freebasic
 #include "easing/easing.bi"
 
@@ -83,7 +83,7 @@ dim as easing.curve c => easing.curve(0.7796228188090026, _
                                       0.9559938737656921)
 
 print c.toJSON()
-' -> "{"xy":0.7796228188090026,"y1":0.7796228188090026,"x2":0.5971406325697899,"y2":0.9559938737656921}"
+' -> "{"x1":0.7796228188090026,"y1":0.7796228188090026,"x2":0.5971406325697899,"y2":0.9559938737656921}"
 
 print c.toJSON(true)
 ' -> "[0.7796228188090026,0.7796228188090026,0.5971406325697899,0.9559938737656921]"
